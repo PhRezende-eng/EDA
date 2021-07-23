@@ -3,24 +3,15 @@
 
 int main()
 {
-    char length = 0;
-    char digito;
+    int digito;
+    int numeroDeDigitos = 0;
 
-    int i = 0;
-    int index = 0;
-
-    while (index == 0)
+    while (scanf("%d", &digito) != EOF)
     {
-
-        char lenght = scanf("%c", &digito);
-        i++;
-        if (lenght == '\n' || lenght == EOF)
-        {
-            index = 1;
-        }
+        numeroDeDigitos++;
     }
 
-    printf("%d\n", i);
+    printf("%d\n", numeroDeDigitos);
 
     return 0;
 }
