@@ -5,18 +5,18 @@
 int main()
 {
     char numeroDeEntrada = 0;
-    char texto[256];
+    char texto[1000];
     double porcentagem = 0;
     int index = 0;
     int lidoNaPalavra = 0;
 
     scanf("%c\n", &numeroDeEntrada);
 
-    fgets(texto, 256, stdin);
+    fgets(texto, 1000, stdin);
 
     for (int i = 0; i <= strlen(texto); i++)
     {
-        if (i == 999 || (texto[i] == 32 && texto[i + 1] == 32))
+        if (i == 1000 || (texto[i] == 32 && texto[i + 1] == 32))
         {
             porcentagem = 101;
             break;
@@ -49,7 +49,7 @@ int main()
     // scanf("%c", &texto); // ler uma palavra
     // scanf("%[^\n]", texto); //pra ler um texto não precisa do "&""
     // printf("%s\n", texto);
-    // fgets(texto, 256, stdin); //cria a variável, diz o tamanho dela e faz o scanf do text
+    // fgets(texto, 1000, stdin); //cria a variável, diz o tamanho dela e faz o scanf do text
     // strlen(texto) // ler o lengt da variável
     return 0;
 }
