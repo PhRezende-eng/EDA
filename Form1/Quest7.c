@@ -16,12 +16,7 @@ int main()
 
     for (int i = 0; i <= strlen(texto); i++)
     {
-        if (texto[i] == 32 && texto[i + 1] == 32)
-        {
-            porcentagem = 101;
-            break;
-        }
-        else if (i == 1000)
+        if (i == 999 || (texto[i] == 32 && texto[i + 1] == 32))
         {
             porcentagem = 101;
             break;
