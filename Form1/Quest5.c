@@ -6,31 +6,31 @@ int main()
 {
     int C = 0;
     int L = 0;
-    int index = 0;
-    int indexx = 0;
+    int indexC = 0;
+    int indexL = 0;
 
     scanf("%d", &C);
     scanf("%d", &L);
 
     if (C >= 1 && L <= 100)
     {
-        while (index < C)
+        while (indexC < C)
         {
-            while (indexx <= L)
+            while (indexL <= L)
             {
-                if (L == indexx)
+                if (L == indexL)
                 {
                     printf("\n");
                     break;
                 }
                 else
                 {
-                    printf("[%.3d,%.3d]", index, indexx); // adiciona 0 à esquerda
-                    indexx++;
+                    printf("[%.3d,%.3d]", indexC, indexL); // adiciona 0 à esquerda
+                    indexL++;
                 }
             }
-            indexx = 0;
-            index++;
+            indexL = 0;
+            indexC++;
         }
     }
 
