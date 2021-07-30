@@ -5,80 +5,94 @@
 
 int main()
 {
-    int Colunas, Linhas, Movimentos, ProfessorA, ProfessorB, DirecaoA, DirecaoB;
-    int indexC, indexL, indexP, Norte, Sul, Leste, Oeste = 0;
+    int Colunas, Linhas, Movimentos, DirecaoA, DirecaoB;
+    int indexP = 0, ProfessorAx = 0, ProfessorAy = 0, ProfessorBx = 0, ProfessorBy = 0, isadf = 0;
 
     scanf("%d", &Colunas);
     scanf("%d", &Linhas);
     scanf("%d", &Movimentos);
 
+    ProfessorAx = 1;
+    ProfessorAy = 1;
+
+    ProfessorBx = Colunas;
+    ProfessorBy = Linhas;
+
     while (indexP < Movimentos)
     {
         scanf("%d", &DirecaoA);
         scanf("%d", &DirecaoB);
+
         switch (DirecaoA)
         {
         case 1:
-            Norte++;
+            ProfessorAy++;
+            break;
 
         case 2:
-            Sul++;
+            ProfessorAy--;
+            break;
 
         case 3:
-            Leste++;
+            ProfessorAx++;
+            break;
 
         case 4:
-            Oeste++;
+            ProfessorAx--;
+            break;
+
+        default:
+            break;
+        }
+        switch (DirecaoB)
+        {
+        case 1:
+            ProfessorBy++;
+            break;
+
+        case 2:
+            ProfessorBy--;
+            break;
+
+        case 3:
+            ProfessorBx++;
+            break;
+
+        case 4:
+            ProfessorBx--;
+            break;
 
         default:
             break;
         }
 
-        switch (DirecaoB)
+        if (ProfessorAx == ProfessorBx && ProfessorAy == ProfessorBy)
         {
-        case 1:
-            Norte++;
+            isadf = 1;
+            printf("Encontraram-se na posicao (%d,%d) no passo %d\n", ProfessorBx, ProfessorAy, indexP + 1);
+            break;
+        }
+        else if ((ProfessorAx > Colunas || ProfessorAx < 1) || (ProfessorAy > Linhas || ProfessorAy < 1))
+        {
+            isadf = 1;
 
-        case 2:
-            Sul++;
+            printf("PA saiu na posicao (%d,%d) no passo %d\n", ProfessorAx, ProfessorAy, indexP + 1);
+            break;
+        }
+        else if ((ProfessorBx > Colunas || ProfessorBx < 1) || (ProfessorBy > Linhas || ProfessorBy < 1))
+        {
+            isadf = 1;
 
-        case 3:
-            Leste++;
-
-        case 4:
-            Oeste++;
-
-        default:
+            printf("PB saiu na posicao (%d,%d) no passo %d\n", ProfessorBx, ProfessorBy, indexP + 1);
             break;
         }
 
         indexP++;
     }
-
-    printf("%d %d %d %d", Norte, Sul, Leste, Oeste);
-
-    // while (indexP < Movimentos)
-    // {
-    //     while (indexC < Colunas)
-    //     {
-    //         while (indexL <= Linhas)
-    //         {
-    //             if (Linhas == indexL)
-    //             {
-    //                 printf("\n");
-    //                 break;
-    //             }
-    //             else
-    //             {
-    //                 printf("[%.3d,%.3d]", indexC, indexL); // adiciona 0 à esquerda
-    //                 indexL++;
-    //             }
-    //         }
-    //         indexL = 0;
-    //         indexC++;
-    //     }
-    //     indexP;
-    // }
+    if (isadf == 0)
+    {
+        printf("Nao se encontraram\n");
+    }
 
     return 0;
 }
