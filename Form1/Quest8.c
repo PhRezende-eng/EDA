@@ -1,18 +1,17 @@
 #include <stdio.h>
+#include <string.h>
 
 int main()
 {
-    char texto[10001];
-    char palavraDesejadaNoTexto[41];
-    char palavratrocada[41];
+    char texto[10000];
+    char palavraDesejadaNoTexto[40];
+    char palavratrocada[40];
     int textoComPalavraTrocada = 0;
     int index = 0;
 
-    fgets(texto, 1001, stdin);
+    scanf("%[^\n]", texto);
     scanf("%s", palavraDesejadaNoTexto);
     scanf("%s", palavratrocada);
-
-    textoComPalavraTrocada = 0;
 
     while (texto[index] != 0)
     {
@@ -20,7 +19,6 @@ int main()
         {
             textoComPalavraTrocada++;
         }
-
         else
         {
             if (textoComPalavraTrocada > 0)
@@ -44,12 +42,13 @@ int main()
         index++;
     }
 
-    if (textoComPalavraTrocada > 0 && palavraDesejadaNoTexto[textoComPalavraTrocada] == 0)
+    if ( palavraDesejadaNoTexto[textoComPalavraTrocada] == 0 && textoComPalavraTrocada > 0)
     {
         printf("%s", palavratrocada);
         textoComPalavraTrocada = 0;
     }
-   
+
+    printf("\n");
 
     return 0;
 }
