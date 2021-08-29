@@ -4,6 +4,14 @@ int main(){
     int x = 5;
     int *ptr;
 
+    double a = 8.00;
+    long b = 8.00000;     
+    int c = 8;
+
+    printf("Quantos bytes reservada para o tipo double: %ld\n", sizeof(a));
+    printf("Quantos bytes reservada para o tipo long: %ld\n", sizeof(b));
+    printf("Quantos bytes reservada para o tipo int: %ld\n", sizeof(c));
+
     printf("Endereço que ptr aponta: %p\n", ptr); //ainda nada foi alocado,nill 
     ptr = &x; //ptr recebe o apontamento de endereço de x
     printf("Endereço que ptr aponta: %p\n", ptr); // apontamento de endereço que recebeu de x
