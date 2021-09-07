@@ -7,8 +7,6 @@ void xFinal(char palavra[110], int posicao, char stringX[110], char stringNaoX[1
 
     if(palavra[posicao] == '\0'){
         strcat(stringNaoX, stringX);
-        //printf("%s\n", stringNaoX);
-        return 0;
     }
 
     if(palavra[posicao] == 'x'){

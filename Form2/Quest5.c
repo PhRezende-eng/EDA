@@ -1,31 +1,28 @@
 #include <stdio.h>
-#define li long int
+#define longInt long int
 
-li count7(li n, li count, int ver){
-    
-	ver = n % 10;
+longInt count7(longInt n, longInt x, int y)
+{
+	y = n%10;
+	if (n < 1)
+		printf("%ld\n", x);
 	
-	if(n == 0)
-    printf("%ld\n", count);
-   if (ver == 7 && n > 0)
-	{
-		n = n/ 10;
-		count = count + 1;
-		count7(n, count, ver);
-	}
-	else if (ver != 7 && n > 0)
-	{
+	if (y == 7 && n > 0){
 		n = n/10;
-		count7(n, count, ver);
+		x = x + 1;
+		count7(n, x, y);
+	} else if (n >= 1 && y != 7){
+		n = n/10;
+		count7(n, x, y);
 	}
-}	
+}
 
-int main(){
-	li n ;
-	li count = 0;	
-	int verifica = 0;
+int main()
+{
+	int y = 0;
+	longInt x = 0;
+	longInt n;
 	scanf("%ld", &n);
-	count7(n, count,verifica);
-
-return 0;
+	count7(n, x, y);
+	return 0;
 }
