@@ -22,8 +22,3 @@ void bubblesort(int *vetor, int N)
         fim--;
     };
 }
-// void main()
-// {
-//     int *list = {4, 5, 2, 3, 1};
-//     bubblesort(*list, 5);
-// }
