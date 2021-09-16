@@ -17,16 +17,18 @@ void insertionSort(int *vetor, int N)
         i++;
     };
 }
-void main()
+int main()
 {
-    int *v, *l, contador = 0, b = 0, n;
+    int *v, *l, contador = 0, b = 0, n = 0;
 
+    l = malloc(32 * 1000);
     while (scanf("%d", &n) != EOF)
     {
         l[contador] = n;
         contador++;
     }
-    v = malloc(contador * sizeof(int));
+    v = malloc(32 * sizeof(int));
+
     for (int i = 0; i < contador; i++)
         v[i] = l[i];
 
@@ -34,5 +36,5 @@ void main()
     for (int i = 0; i <= contador; i++)
         i != contador ? printf("%d ", v[i]) : printf("\n");
 
-    free(v);
+    return 0;
 }
