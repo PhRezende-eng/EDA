@@ -7,7 +7,7 @@ typedef struct {
     int N;
 } pilha;
 
-pilha *cria_pilha(){
+int cria_pilha(){
     pilha *p = malloc(sizeof(pilha));
     p ->N = 10;
     p ->v = malloc(p->N + sizeof(int));

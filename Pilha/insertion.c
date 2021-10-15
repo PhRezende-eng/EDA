@@ -7,7 +7,7 @@ typedef struct {
     int N;
 } pilha;
 
-pilha *empilha(pilha *p, int x){
+int empilha(pilha *p, int x){
     if(p -> topo == p -> N){
         p -> v = realloc(p -> v, 2* p-> N + sizeof(int));
         if(p -> v == NULL)
